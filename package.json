@@ -1,0 +1,24 @@
+{
+    "name": "vatr84-modal-component",
+    "version": "1.0.5",
+    "description": "A reusable modal React component for HRnet.",
+    "main": "index.js",
+    "module": "index.js",
+    "files": [
+        "index.js",
+        "Modal.jsx",
+        "Modal.module.css",
+        "Modal.d.ts"
+    ],
+    "keywords": [
+        "react",
+        "modal",
+        "component"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": ">=17.0.0"
+    },
+    "types": "Modal.d.ts"
+}
