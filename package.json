@@ -1,6 +1,6 @@
 {
     "name": "vatr84-modal-component",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "A reusable modal React component for HRnet.",
     "main": "index.js",
     "module": "index.js",
@@ -20,5 +20,9 @@
     "peerDependencies": {
         "react": ">=17.0.0"
     },
-    "types": "Modal.d.ts"
+    "types": "Modal.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vatr84/vatr84-modal-component.git"
+    }
 }
