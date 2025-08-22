@@ -1,6 +1,6 @@
 {
     "name": "vatr84-modal-component",
-    "version": "1.0.6",
+    "version": "1.0.9",
     "description": "A reusable modal React component for HRnet.",
     "main": "index.js",
     "module": "index.js",

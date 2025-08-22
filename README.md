@@ -6,6 +6,7 @@ A reusable modal React component for HRnet projects.
 ```bash
 npm install vatr84-modal-component
 ```
+OR
 ```bash
 npm i https://github.com/vatr84/vatr84-modal-component.git
 ```
