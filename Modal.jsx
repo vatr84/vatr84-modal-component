@@ -2,6 +2,23 @@ import { memo, useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Modal.module.css';
 
+// Modal component displays a dialog overlay with fade animation and accessibility features.
+
+/**
+ * Modal React component for displaying overlay dialogs.
+ *
+ * @component
+ * @param {Object} props - Component props
+ * @param {boolean} props.isOpen - Controls whether the modal is open
+ * @param {function} props.onClose - Function called when modal is closed
+ * @param {React.ReactNode} props.children - Content to display inside the modal
+ * @param {string} [props.title="Success!"] - Title displayed at the top of the modal
+ * @param {string} [props.closeText="Close"] - Text for the close button
+ * @param {number} [props.maxWidth=null] - Maximum width of the modal in pixels
+ * @param {string} [props.className=""] - Additional CSS class names for the modal content
+ * @param {number} [props.fadeDuration=300] - Duration of fade animation in milliseconds
+ * @returns {JSX.Element|null} The modal dialog element, or null if not visible
+ */
 const Modal = memo(({
   isOpen,
   onClose,
@@ -12,13 +29,18 @@ const Modal = memo(({
   className = "",
   fadeDuration = 300
 }) => {
+  // State to control modal visibility for fade animation
   const [isVisible, setIsVisible] = useState(false);
+  // Ref for the overlay element
   const overlayRef = useRef(null);
+  // Ref for the modal content element
   const contentRef = useRef(null);
 
   useEffect(() => {
+    // Handle opening and closing with fade animation
     if (isOpen) {
       setIsVisible(true);
+      // Prevent background scrolling when modal is open
       document.body.style.overflow = 'hidden';
       const timer = setTimeout(() => {
         if (overlayRef.current && contentRef.current) {
@@ -32,6 +54,7 @@ const Modal = memo(({
         overlayRef.current.classList.remove(styles['modal-visible']);
         contentRef.current.classList.remove(styles['modal-visible']);
       }
+      // Delay hiding modal for fade out effect
       const timer = setTimeout(() => {
         setIsVisible(false);
         document.body.style.overflow = '';
@@ -41,6 +64,7 @@ const Modal = memo(({
   }, [isOpen, fadeDuration]);
 
   useEffect(() => {
+    // Allow closing modal with Escape key for accessibility
     const handleEscKey = (e) => {
       if (e.key === 'Escape' && isOpen) {
         onClose();
@@ -55,6 +79,7 @@ const Modal = memo(({
   }, [isOpen, onClose]);
 
   const handleOverlayClick = (e) => {
+    // Close modal when clicking outside the content (on overlay)
     if (e.target === overlayRef.current) {
       onClose();
     }

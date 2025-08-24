@@ -19,3 +19,16 @@ import Modal from 'vatr84-modal-component';
   <p>Content</p>
 </Modal>
 ```
+
+## Props
+
+| Name         | Type               | Default     | Description                                      |
+|--------------|--------------------|-------------|--------------------------------------------------|
+| isOpen       | boolean            | —           | Controls whether the modal is open               |
+| onClose      | function           | —           | Function called when modal is closed             |
+| children     | React.ReactNode    | —           | Content to display inside the modal              |
+| title        | string             | "Success!"  | Title displayed at the top of the modal          |
+| closeText    | string             | "Close"     | Text for the close button                        |
+| maxWidth     | number             | null        | Maximum width of the modal in pixels             |
+| className    | string             | ""          | Additional CSS class names for the modal content |
+| fadeDuration | number             | 300         | Duration of fade animation in milliseconds       |
